@@ -11,5 +11,12 @@
     "url": "https://github.com/orgs/sse-editor/plugins"
   },
   "author": "SSE World",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@sse-editor/icons": "^1.0.1",
+    "tsup": "^8.3.6"
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.30.8"
+  }
 }
