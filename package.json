@@ -1,0 +1,15 @@
+{
+  "name": "@sse-editor/plugins",
+  "version": "1.0.0",
+  "description": "All the plugins for SSE Editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orgs/sse-editor/plugins"
+  },
+  "author": "SSE World",
+  "license": "MIT"
+}
