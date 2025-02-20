@@ -4,7 +4,8 @@
   "description": "All the plugins for SSE Editor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -13,10 +14,10 @@
   "author": "SSE World",
   "license": "MIT",
   "devDependencies": {
+    "@editorjs/editorjs": "^2.30.8",
     "@sse-editor/icons": "^1.0.1",
-    "tsup": "^8.3.6"
-  },
-  "dependencies": {
-    "@editorjs/editorjs": "^2.30.8"
+    "vite": "^6.1.1",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.5.0"
   }
 }

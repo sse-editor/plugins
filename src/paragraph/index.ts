@@ -1,7 +1,7 @@
 /**
  * Build Styles
  */
-import "../css/paragraph.css";
+import "./index.css";
 
 import { IconText } from "@sse-editor/icons";
 import makeFragment from "./makeFragment";
