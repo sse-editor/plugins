@@ -4,8 +4,12 @@ import * as pkg from "./package.json";
 import dts from "vite-plugin-dts";
 
 const entryPoints = [
-  { name: "Header", fileName: "header", entry: "src/header/index.ts" },
-  { name: "Paragraph", fileName: "paragraph", entry: "src/paragraph/index.ts" },
+  { name: "Header", fileName: "header", entry: "header/index.ts" },
+  { name: "Paragraph", fileName: "paragraph", entry: "paragraph/index.ts" },
+  { name: "Quote", fileName: "quote", entry: "quote/index.ts" },
+  { name: "Delimiter", fileName: "delimiter", entry: "delimiter/index.ts" },
+  { name: "Warning", fileName: "warning", entry: "warning/index.ts" },
+  { name: "index", fileName: "index", entry: "index.ts" },
 ];
 
 const NODE_ENV = process.argv.mode || "development";
@@ -17,7 +21,7 @@ export default {
     lib: {
       // Use an array to define multiple entry points
       entry: entryPoints.reduce((acc, { entry }) => {
-        acc[entry] = path.resolve(__dirname, entry);
+        acc[entry] = path.resolve(__dirname, "src", entry);
         return acc;
       }, {}),
     },

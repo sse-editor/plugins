@@ -1,0 +1,49 @@
+.ce-delimiter {
+  line-height: 1.6em;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+/* Delimiter styles */
+.ce-delimiter-star span {
+  font-size: 30px;
+  line-height: 65px;
+  display: inline-block;
+  height: 30px;
+  letter-spacing: 0.2em;
+  font-weight: 900;
+}
+.ce-delimiter-dash span {
+  margin: 10px;
+  display: inline-block;
+  height: 30px;
+  letter-spacing: 0.6em;
+  font-weight: 900;
+}
+.ce-delimiter-line hr {
+  font-size: 48px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 3px;
+}
+
+/* Thickness */
+.ce-delimiter-thickness-1 {
+  border-width: 0.5px;
+}
+.ce-delimiter-thickness-2 {
+  border-width: 1px;
+}
+.ce-delimiter-thickness-3 {
+  border-width: 1.5px;
+}
+.ce-delimiter-thickness-4 {
+  border-width: 2px;
+}
+.ce-delimiter-thickness-5 {
+  border-width: 2.5px;
+}
+.ce-delimiter-thickness-6 {
+  border-width: 3px;
+}
