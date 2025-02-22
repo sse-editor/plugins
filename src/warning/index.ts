@@ -7,7 +7,7 @@ import type {
   BlockTool,
   ToolConfig,
   BlockToolData,
-} from "@editorjs/editorjs";
+} from "@sse-editor/types";
 
 /**
  * Warning Tool`s CSS classnames

@@ -1,6 +1,3 @@
-/**
- * Build styles
- */
 import "./index.css";
 
 import {
@@ -12,7 +9,7 @@ import {
   IconH6,
   IconHeading,
 } from "@sse-editor/icons";
-import { API, BlockTune, PasteEvent } from "@editorjs/editorjs";
+import { API, BlockTune, PasteEvent } from "@sse-editor/types";
 
 /**
  * @description Tool's input and output data format
@@ -65,8 +62,8 @@ interface ConstructorArgs {
 /**
  * Header block for the Editor.js.
  *
- * @author CodeX (team@ifmo.su)
- * @copyright CodeX 2018
+ * @author SSE World
+ * @copyright SSE Editor
  * @license MIT
  * @version 2.0.0
  */

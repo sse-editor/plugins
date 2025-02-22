@@ -1,6 +1,3 @@
-/**
- * Build Styles
- */
 import "./index.css";
 
 import { IconText } from "@sse-editor/icons";
@@ -14,14 +11,14 @@ import type {
   SanitizerConfig,
   ToolConfig,
   ToolboxConfig,
-} from "@editorjs/editorjs";
+} from "@sse-editor/types";
 
 /**
  * Base Paragraph Block for the Editor.js.
  * Represents a regular text block
  *
- * @author CodeX (team@codex.so)
- * @copyright CodeX 2018
+ * @author SSE World
+ * @copyright SSE Editor
  * @license The MIT License (MIT)
  */
 

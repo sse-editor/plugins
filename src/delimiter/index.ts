@@ -1,6 +1,3 @@
-/**
- * Build styles
- */
 import "./index.css";
 import {
   API,
@@ -10,14 +7,14 @@ import {
   ToolboxConfig,
   PasteConfig,
   PasteEvent,
-} from "@editorjs/editorjs";
+} from "@sse-editor/types";
 import { IconDelimiter } from "@sse-editor/icons";
 
 /**
  * Delimiter Block for the Editor.js.
  *
- * @author CodeX (team@ifmo.su)
- * @copyright CodeX 2018
+ * @author SSE World
+ * @copyright SSE Editor 2024
  * @license The MIT License (MIT)
  * @version 2.0.0
  */

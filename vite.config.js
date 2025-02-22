@@ -9,7 +9,13 @@ const entryPoints = [
   { name: "Quote", fileName: "quote", entry: "quote/index.ts" },
   { name: "Delimiter", fileName: "delimiter", entry: "delimiter/index.ts" },
   { name: "Warning", fileName: "warning", entry: "warning/index.ts" },
+  { name: "Code", fileName: "code", entry: "code/index.ts" },
   { name: "index", fileName: "index", entry: "index.ts" },
+  {
+    name: "Simple Image",
+    fileName: "simple-image",
+    entry: "simple-image/index.ts",
+  },
 ];
 
 const NODE_ENV = process.argv.mode || "development";
@@ -31,7 +37,7 @@ export default {
     VERSION: JSON.stringify(VERSION),
   },
   plugins: [
-    cssInjectedByJsPlugin(),
+    cssInjectedByJsPlugin({ dev: { enableDev: true } }),
     dts({
       tsconfigPath: "./tsconfig.json",
     }),

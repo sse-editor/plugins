@@ -1,7 +1,7 @@
 import "./index.css";
 
 import { IconAlignLeft, IconAlignCenter, IconQuote } from "@sse-editor/icons";
-import { make } from "@sse-editor/dom"
+import { make } from "@sse-editor/dom";
 import type {
   API,
   BlockAPI,
@@ -9,8 +9,8 @@ import type {
   ToolConfig,
   SanitizerConfig,
   ConversionConfig,
-} from "@editorjs/editorjs";
-import type { MenuConfig } from "@editorjs/editorjs/types/tools";
+} from "@sse-editor/types";
+import type { MenuConfig } from "@sse-editor/types/types/tools";
 
 /**
  * Quote Tool`s initial configuration
