@@ -57,7 +57,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/orgs/sse-editor/plugins"
+    "url": "https://github.com/sse-editor/plugins"
   },
   "author": "SSE World",
   "license": "MIT",
