@@ -1,18 +1,19 @@
 import path from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import * as pkg from "./package.json";
-import { entryPoints } from "./files/utils";
+import { entryPoints } from "./files/utils"
 
 const NODE_ENV = process.argv.mode || "development";
 const VERSION = pkg.version;
 
 export default {
   build: {
+    outDir: `dist/${entryPoints.paragraph.fileName}`,
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(__dirname, `src/${entryPoints.index.entry}`),
-      name: entryPoints.index.name,
-      fileName: entryPoints.index.fileName,
+      entry: path.resolve(process.cwd(), "src", entryPoints.paragraph.entry),
+      name: entryPoints.paragraph.name,
+      fileName: entryPoints.paragraph.fileName,
     },
   },
   define: {

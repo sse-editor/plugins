@@ -8,11 +8,12 @@ const VERSION = pkg.version;
 
 export default {
   build: {
+    outDir: `dist/${entryPoints.code.fileName}`,
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(__dirname, `src/${entryPoints.index.entry}`),
-      name: entryPoints.index.name,
-      fileName: entryPoints.index.fileName,
+      entry: path.resolve(process.cwd(), "src", entryPoints.code.entry),
+      name: entryPoints.code.name,
+      fileName: entryPoints.code.fileName,
     },
   },
   define: {
