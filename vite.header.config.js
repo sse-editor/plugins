@@ -1,7 +1,8 @@
 import path from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import * as pkg from "./package.json";
-import { entryPoints } from "./files/utils"
+import { entryPoints } from "./files/utils";
+import dts from "vite-plugin-dts";
 
 const NODE_ENV = process.argv.mode || "development";
 const VERSION = pkg.version;
@@ -43,6 +44,14 @@ export default {
           console.error("sse-vite-plugin-css-injected-by-js", e);
         }
       },
+    }),
+    dts({
+      tsconfigPath: "./tsconfig.json",
+      compilerOptions: {
+        outDir: `./dist/${entryPoints.header.fileName}`,
+      },
+      include: [`src/${entryPoints.header.entry}`],
+      exclude: ["node_modules"],
     }),
   ],
 };

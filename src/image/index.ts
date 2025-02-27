@@ -90,7 +90,7 @@ export default class ImageTool implements BlockTool {
    * @param tool.readOnly - read-only mode flag
    * @param tool.block - current Block API
    */
-  constructor({ data, config, api, readOnly, block }: ImageToolConstructorOptions) {
+  constructor({ data, config = { endpoints: {} }, api, readOnly, block }: ImageToolConstructorOptions) {
     this.api = api;
     this.block = block;
 
@@ -230,78 +230,78 @@ export default class ImageTool implements BlockTool {
    * Returns configuration for block tunes: add background, add border, stretch image
    * @returns TunesMenuConfig
    */
-  public renderSettings(): TunesMenuConfig {
-    // Merge default tunes with the ones that might be added by user
-    // @see https://github.com/editor-js/image/pull/49
-    const tunes = ImageTool.tunes.concat(this.config.actions || []);
-    const featureTuneMap: Record<string, string> = {
-      border: 'withBorder',
-      background: 'withBackground',
-      stretch: 'stretched',
-      caption: 'caption',
-    };
+  // public renderSettings(): TunesMenuConfig {
+  //   // Merge default tunes with the ones that might be added by user
+  //   // @see https://github.com/editor-js/image/pull/49
+  //   const tunes = ImageTool.tunes.concat(this.config.actions || []);
+  //   const featureTuneMap: Record<string, string> = {
+  //     border: 'withBorder',
+  //     background: 'withBackground',
+  //     stretch: 'stretched',
+  //     caption: 'caption',
+  //   };
 
-    if (this.config.features?.caption === 'optional') {
-      tunes.push({
-        name: 'caption',
-        icon: IconText,
-        title: 'With caption',
-        toggle: true,
-      });
-    }
+  //   if (this.config.features?.caption === 'optional') {
+  //     tunes.push({
+  //       name: 'caption',
+  //       icon: IconText,
+  //       title: 'With caption',
+  //       toggle: true,
+  //     });
+  //   }
 
-    const availableTunes = tunes.filter((tune) => {
-      const featureKey = Object.keys(featureTuneMap).find(key => featureTuneMap[key] === tune.name);
+  //   const availableTunes = tunes.filter((tune) => {
+  //     const featureKey = Object.keys(featureTuneMap).find(key => featureTuneMap[key] === tune.name);
 
-      if (featureKey === 'caption') {
-        return this.config.features?.caption !== false;
-      }
+  //     if (featureKey === 'caption') {
+  //       return this.config.features?.caption !== false;
+  //     }
 
-      return featureKey == null || this.config.features?.[featureKey as keyof FeaturesConfig] !== false;
-    });
+  //     return featureKey == null || this.config.features?.[featureKey as keyof FeaturesConfig] !== false;
+  //   });
 
-    /**
-     * Check if the tune is active
-     * @param tune - tune to check
-     */
-    const isActive = (tune: ActionConfig): boolean => {
-      let currentState = this.data[tune.name as keyof ImageToolData] as boolean;
+  //   /**
+  //    * Check if the tune is active
+  //    * @param tune - tune to check
+  //    */
+  //   const isActive = (tune: ActionConfig): boolean => {
+  //     let currentState = this.data[tune.name as keyof ImageToolData] as boolean;
 
-      if (tune.name === 'caption') {
-        currentState = this.isCaptionEnabled ?? currentState;
-      }
+  //     if (tune.name === 'caption') {
+  //       currentState = this.isCaptionEnabled ?? currentState;
+  //     }
 
-      return currentState;
-    };
+  //     return currentState;
+  //   };
 
-    return availableTunes.map(tune => ({
-      icon: tune.icon,
-      label: this.api.i18n.t(tune.title),
-      name: tune.name,
-      toggle: tune.toggle,
-      isActive: isActive(tune),
-      onActivate: () => {
-        /** If it'a user defined tune, execute it's callback stored in action property */
-        if (typeof tune.action === 'function') {
-          tune.action(tune.name);
+  //   return availableTunes.map(tune => ({
+  //     icon: tune.icon,
+  //     label: this.api.i18n.t(tune.title),
+  //     name: tune.name,
+  //     toggle: tune.toggle,
+  //     isActive: isActive(tune),
+  //     onActivate: () => {
+  //       /** If it'a user defined tune, execute it's callback stored in action property */
+  //       if (typeof tune.action === 'function') {
+  //         tune.action(tune.name);
 
-          return;
-        }
-        let newState = !isActive(tune);
+  //         return;
+  //       }
+  //       let newState = !isActive(tune);
 
-        /**
-         * For the caption tune, we can't rely on the this._data
-         * because it can be manualy toggled by user
-         */
-        if (tune.name === 'caption') {
-          this.isCaptionEnabled = !(this.isCaptionEnabled ?? false);
-          newState = this.isCaptionEnabled;
-        }
+  //       /**
+  //        * For the caption tune, we can't rely on the this._data
+  //        * because it can be manualy toggled by user
+  //        */
+  //       if (tune.name === 'caption') {
+  //         this.isCaptionEnabled = !(this.isCaptionEnabled ?? false);
+  //         newState = this.isCaptionEnabled;
+  //       }
 
-        this.tuneToggled(tune.name as keyof ImageToolData, newState);
-      },
-    }));
-  }
+  //       this.tuneToggled(tune.name as keyof ImageToolData, newState);
+  //     },
+  //   }));
+  // }
 
   /**
    * Fires after clicks on the Toolbox Image Icon

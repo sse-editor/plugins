@@ -6,15 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "npm-run-all build:*",
+    "build:index": "vite build --config ./vite.config.js",
     "build:header": "vite build --config ./vite.header.config.js",
     "build:paragraph": "vite build --config ./vite.paragraph.config.js",
     "build:quote": "vite build --config ./vite.quote.config.js",
     "build:delimiter": "vite build --config ./vite.delimiter.config.js",
     "build:warning": "vite build --config ./vite.warning.config.js",
-    "build:code": "vite build --config ./vite.code.config.js",
-    "build:image": "vite build --config ./vite.image.config.js",
-    "build:index": "vite build --config ./vite.config.js",
-    "build:tsc": "tsc"
+    "build:code": "vite build --config ./vite.code.config.js"
   },
   "repository": {
     "type": "git",
