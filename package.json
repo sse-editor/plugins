@@ -14,6 +14,7 @@
   "author": "SSE World",
   "license": "MIT",
   "devDependencies": {
+    "@codexteam/ajax": "^4.2.0",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@sse-editor/dom": "^1.0.0",
