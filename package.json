@@ -2,7 +2,48 @@
   "name": "@sse-editor/plugins",
   "version": "1.0.0",
   "description": "All the plugins for SSE Editor",
-  "main": "index.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./code": {
+      "import": "./dist/code.mjs",
+      "require": "./dist/code.umd.js",
+      "types": "./dist/code.d.ts"
+    },
+    "./delimiter": {
+      "import": "./dist/delimiter.mjs",
+      "require": "./dist/delimiter.umd.js",
+      "types": "./dist/delimiter.d.ts"
+    },
+    "./header": {
+      "import": "./dist/header.mjs",
+      "require": "./dist/header.umd.js",
+      "types": "./dist/header.d.ts"
+    },
+    "./paragraph": {
+      "import": "./dist/paragraph.mjs",
+      "require": "./dist/paragraph.umd.js",
+      "types": "./dist/paragraph.d.ts"
+    },
+    "./quote": {
+      "import": "./dist/quote.mjs",
+      "require": "./dist/quote.umd.js",
+      "types": "./dist/quote.d.ts"
+    },
+    "./warning": {
+      "import": "./dist/warning.mjs",
+      "require": "./dist/warning.umd.js",
+      "types": "./dist/warning.d.ts"
+    }
+  },
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "npm-run-all build:*",

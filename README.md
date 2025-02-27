@@ -1,6 +1,7 @@
 # SSE Editor Plugin
 
-It Provides these codes
+It Provides these plugins
 
-- `paragraph` -- text block base tool
-- `header` -- header block
+| Plugin | Description |
+| ------ | ----------- |
+| Header | Ram         |
