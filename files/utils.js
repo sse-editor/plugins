@@ -19,4 +19,5 @@ export const entryPoints = {
     fileName: "image",
     entry: "image/index.ts",
   },
+  list: { name: "List", fileName: "list", entry: "list/index.ts" },
 };
