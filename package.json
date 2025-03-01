@@ -29,8 +29,7 @@
     "build:warning": "vite build --config ./scripts/vite.warning.config.js",
     "build:code": "vite build --config ./scripts/vite.code.config.js",
     "build:list": "vite build --config ./scripts/vite.list.config.js",
-    "build:image": "vite build --config ./scripts/vite.image.config.js",
-    "prepare": "npm run build"
+    "build:image": "vite build --config ./scripts/vite.image.config.js"
   },
   "repository": {
     "type": "git",
