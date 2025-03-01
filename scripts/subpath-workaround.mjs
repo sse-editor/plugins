@@ -11,21 +11,21 @@ const writeJSON = (path, contents) =>
   );
 
 const pkgJsonPlaceholder = (name) => ({
-  main: `./dist/${name}.umd.js`,
-  module: `./dist/${name}.mjs`,
+  main: `../dist/${name}.umd.js`,
+  module: `../dist/${name}.mjs`,
 });
 
 const pkgJsonBarrelPlaceholder = (name) => ({
-  main: `./dist/${name}/${name}.umd.js`,
-  module: `./dist/${name}/${name}.mjs`,
-  types: `./types/${name}/index.d.ts`
+  main: `../dist/${name}/${name}.umd.js`,
+  module: `../dist/${name}/${name}.mjs`,
+  types: `../types/${name}/index.d.ts`
 });
 
 async function run() {
   console.log("Loading package.json");
   const pkgFile = loadJSON(`../package.json`);
 
-  const subpathHelperFile = await import("../subpaths.js");
+  const subpathHelperFile = await import("../subpaths.mjs");
 
   console.log(
     `Found ${subpathHelperFile.subpathNames.length} subpaths and ${subpathHelperFile.subpathFoldersBarrel.length} subpath barrels`

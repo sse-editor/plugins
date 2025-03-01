@@ -1,6 +1,6 @@
 {
   "name": "@sse-editor/plugins",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "All the plugins for SSE Editor",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
@@ -20,7 +20,7 @@
   "scripts": {
     "clean": "rimraf dist types header paragraph quote delimiter warning code list image",
     "build": "npm-run-all build:*",
-    "build:files": "node ./scripts/subpath-workaround.js",
+    "build:files": "node ./scripts/subpath-workaround.mjs",
     "build:tsc": "tsc",
     "build:header": "vite build --config ./scripts/vite.header.config.js",
     "build:paragraph": "vite build --config ./scripts/vite.paragraph.config.js",
@@ -29,7 +29,8 @@
     "build:warning": "vite build --config ./scripts/vite.warning.config.js",
     "build:code": "vite build --config ./scripts/vite.code.config.js",
     "build:list": "vite build --config ./scripts/vite.list.config.js",
-    "build:image": "vite build --config ./scripts/vite.image.config.js"
+    "build:image": "vite build --config ./scripts/vite.image.config.js",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
