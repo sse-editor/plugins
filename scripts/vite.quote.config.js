@@ -1,20 +1,20 @@
 import path from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import * as pkg from "./package.json";
-import { entryPoints } from "./files/utils";
-import dts from "vite-plugin-dts";
+import * as pkg from "../package.json";
+import { entryPoints } from "./utils";
+// import dts from "vite-plugin-dts";
 
 const NODE_ENV = process.argv.mode || "development";
 const VERSION = pkg.version;
 
 export default {
   build: {
-    outDir: `dist/${entryPoints.list.fileName}`,
+    outDir: `${process.cwd()}/dist/${entryPoints.quote.fileName}`,
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(process.cwd(), "src", entryPoints.list.entry),
-      name: entryPoints.list.name,
-      fileName: entryPoints.list.fileName,
+      entry: path.resolve(process.cwd(), "src", entryPoints.quote.entry),
+      name: entryPoints.quote.name,
+      fileName: entryPoints.quote.fileName,
     },
   },
   define: {
@@ -45,13 +45,13 @@ export default {
         }
       },
     }),
-    dts({
-      tsconfigPath: "./tsconfig.json",
-      compilerOptions: {
-        outDir: `./dist/${entryPoints.list.fileName}`,
-      },
-      include: [`src/${entryPoints.list.entry}`],
-      exclude: ["node_modules"],
-    }),
+    // dts({
+    //   tsconfigPath: "./tsconfig.json",
+    //   compilerOptions: {
+    //     outDir: `./dist/${entryPoints.quote.fileName}`,
+    //   },
+    //   include: [`src/${entryPoints.quote.entry}`],
+    //   exclude: ["node_modules"],
+    // }),
   ],
 };

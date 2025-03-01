@@ -1,15 +1,15 @@
 import path from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import * as pkg from "./package.json";
-import { entryPoints } from "./files/utils"
-import dts from "vite-plugin-dts";
+import * as pkg from "../package.json";
+import { entryPoints } from "./utils"
+// import dts from "vite-plugin-dts";
 
 const NODE_ENV = process.argv.mode || "development";
 const VERSION = pkg.version;
 
 export default {
   build: {
-    outDir: `dist/${entryPoints.paragraph.fileName}`,
+    outDir: `${process.cwd()}/dist/${entryPoints.paragraph.fileName}`,
     copyPublicDir: false,
     lib: {
       entry: path.resolve(process.cwd(), "src", entryPoints.paragraph.entry),
@@ -45,13 +45,13 @@ export default {
         }
       },
     }),
-    dts({
-      tsconfigPath: "./tsconfig.json",
-      compilerOptions: {
-        outDir: `./dist/${entryPoints.paragraph.fileName}`,
-      },
-      include: [`src/${entryPoints.paragraph.entry}`],
-      exclude: ["node_modules"],
-    }),
+    // dts({
+    //   tsconfigPath: "./tsconfig.json",
+    //   compilerOptions: {
+    //     outDir: `./dist/${entryPoints.paragraph.fileName}`,
+    //   },
+    //   include: [`src/${entryPoints.paragraph.entry}`],
+    //   exclude: ["node_modules"],
+    // }),
   ],
 };

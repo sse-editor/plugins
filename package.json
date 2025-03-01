@@ -4,64 +4,32 @@
   "description": "All the plugins for SSE Editor",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "types",
+    "code",
+    "delimiter",
+    "header",
+    "image",
+    "list",
+    "paragraph",
+    "quote",
+    "warning"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./code": {
-      "import": "./dist/code/code.mjs",
-      "require": "./dist/code/code.umd.js",
-      "types": "./dist/code/index.d.ts"
-    },
-    "./delimiter": {
-      "import": "./dist/delimiter/delimiter.mjs",
-      "require": "./dist/delimiter/delimiter.umd.js",
-      "types": "./dist/delimiter/index.d.ts"
-    },
-    "./header": {
-      "import": "./dist/header/header.mjs",
-      "require": "./dist/header/header.umd.js",
-      "types": "./dist/header/index.d.ts"
-    },
-    "./paragraph": {
-      "import": "./dist/paragraph/paragraph.mjs",
-      "require": "./dist/paragraph/paragraph.umd.js",
-      "types": "./dist/paragraph/index.d.ts"
-    },
-    "./quote": {
-      "import": "./dist/quote/quote.mjs",
-      "require": "./dist/quote/quote.umd.js",
-      "types": "./dist/quote/index.d.ts"
-    },
-    "./warning": {
-      "import": "./dist/warning/warning.mjs",
-      "require": "./dist/warning/warning.umd.js",
-      "types": "./dist/warning/index.d.ts"
-    },
-    "./list": {
-      "import": "./dist/list/list.mjs",
-      "require": "./dist/list/list.umd.js",
-      "types": "./dist/list/index.d.ts"
-    }
-  },
-  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "clean": "rimraf dist types header paragraph quote delimiter warning code list image",
     "build": "npm-run-all build:*",
-    "build:index": "vite build --config ./vite.config.js",
-    "build:header": "vite build --config ./vite.header.config.js",
-    "build:paragraph": "vite build --config ./vite.paragraph.config.js",
-    "build:quote": "vite build --config ./vite.quote.config.js",
-    "build:delimiter": "vite build --config ./vite.delimiter.config.js",
-    "build:warning": "vite build --config ./vite.warning.config.js",
-    "build:code": "vite build --config ./vite.code.config.js",
-    "build:list": "vite build --config ./vite.list.config.js"
+    "build:files": "node ./scripts/subpath-workaround.js",
+    "build:tsc": "tsc",
+    "build:header": "vite build --config ./scripts/vite.header.config.js",
+    "build:paragraph": "vite build --config ./scripts/vite.paragraph.config.js",
+    "build:quote": "vite build --config ./scripts/vite.quote.config.js",
+    "build:delimiter": "vite build --config ./scripts/vite.delimiter.config.js",
+    "build:warning": "vite build --config ./scripts/vite.warning.config.js",
+    "build:code": "vite build --config ./scripts/vite.code.config.js",
+    "build:list": "vite build --config ./scripts/vite.list.config.js",
+    "build:image": "vite build --config ./scripts/vite.image.config.js"
   },
   "repository": {
     "type": "git",
@@ -74,7 +42,7 @@
     "@sse-editor/caret": "^1.0.1",
     "@sse-editor/dom": "^1.0.0",
     "@sse-editor/icons": "^1.1.0",
-    "@sse-editor/types": "^1.0.2",
+    "@sse-editor/types": "^1.1.0",
     "vite": "^6.1.1",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.0"
