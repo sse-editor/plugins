@@ -7,9 +7,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "declaration": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "outDir": "./types"
   },
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

@@ -10,7 +10,7 @@ import type {
   SanitizerConfig,
   ConversionConfig,
 } from "@sse-editor/types";
-import type { MenuConfig } from "@sse-editor/types/types/tools";
+import type { MenuConfig } from "@sse-editor/types/tools";
 
 /**
  * Quote Tool`s initial configuration

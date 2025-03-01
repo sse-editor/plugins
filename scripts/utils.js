@@ -13,7 +13,6 @@ export const entryPoints = {
   },
   warning: { name: "Warning", fileName: "warning", entry: "warning/index.ts" },
   code: { name: "Code", fileName: "code", entry: "code/index.ts" },
-  index: { name: "index", fileName: "index", entry: "index.ts" },
   image: {
     name: "Image",
     fileName: "image",

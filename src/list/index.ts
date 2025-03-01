@@ -8,7 +8,7 @@ import type {
   BlockToolConstructorOptions,
   MenuConfigItem,
   ToolConfig,
-} from "@sse-editor/types/types/tools";
+} from "@sse-editor/types/tools";
 import {
   IconListBulleted,
   IconListNumbered,
