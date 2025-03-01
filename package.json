@@ -43,8 +43,12 @@
     "@sse-editor/dom": "^1.0.0",
     "@sse-editor/icons": "^1.1.0",
     "@sse-editor/types": "^1.1.0",
+    "@types/react": "^19.0.10",
     "vite": "^6.1.1",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0"
   }
 }

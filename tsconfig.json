@@ -11,7 +11,8 @@
     "skipLibCheck": true,
     "declaration": true,
     "isolatedModules": true,
-    "outDir": "./types"
+    "outDir": "./types",
+    "types": ["react"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]
