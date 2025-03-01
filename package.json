@@ -15,20 +15,24 @@
     "list",
     "paragraph",
     "quote",
-    "warning"
+    "warning",
+    "embed",
+    "color-picker"
   ],
   "scripts": {
-    "clean": "rimraf dist types header paragraph quote delimiter warning code list image",
+    "clean": "rimraf dist types header paragraph quote delimiter warning code list image embed",
     "build": "npm-run-all build:*",
     "build:files": "node ./scripts/subpath-workaround.mjs",
     "build:tsc": "tsc",
     "build:header": "vite build --config ./scripts/vite.header.config.js",
+    "build:embed": "vite build --config ./scripts/vite.embed.config.js",
     "build:paragraph": "vite build --config ./scripts/vite.paragraph.config.js",
     "build:quote": "vite build --config ./scripts/vite.quote.config.js",
     "build:delimiter": "vite build --config ./scripts/vite.delimiter.config.js",
     "build:warning": "vite build --config ./scripts/vite.warning.config.js",
     "build:code": "vite build --config ./scripts/vite.code.config.js",
     "build:list": "vite build --config ./scripts/vite.list.config.js",
+    "build:color": "vite build --config ./scripts/vite.color.config.js",
     "build:image": "vite build --config ./scripts/vite.image.config.js"
   },
   "repository": {
@@ -41,6 +45,7 @@
     "@codexteam/ajax": "^4.2.0",
     "@sse-editor/caret": "^1.0.1",
     "@sse-editor/dom": "^1.0.0",
+    "@sse-editor/editor.js": "^1.0.0-alpha-1",
     "@sse-editor/icons": "^1.1.0",
     "@sse-editor/types": "^1.1.0",
     "@types/react": "^19.0.10",
@@ -49,6 +54,7 @@
     "vite-plugin-dts": "^4.5.0"
   },
   "dependencies": {
+    "debounce": "^2.2.0",
     "react": "^19.0.0"
   }
 }
