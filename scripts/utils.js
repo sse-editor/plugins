@@ -20,5 +20,6 @@ export const entryPoints = {
   },
   list: { name: "List", fileName: "list", entry: "list/index.ts" },
   embed: { name: "Embed", fileName: "embed", entry: "embed/index.ts" },
-  color: { name: "Color Picker", fileName: "color-picker", entry: "color-picker/index.ts" }
+  color: { name: "Color Picker", fileName: "color-picker", entry: "color-picker/index.ts" },
+  table: { name: "Table", fileName: "table", entry: "table/index.ts" }
 };

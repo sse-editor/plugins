@@ -37,3 +37,22 @@ jobs:
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install @semantic-release/git semantic-release -D
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: >-
+          git push
+          https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          HEAD:refs/heads/v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

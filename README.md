@@ -14,3 +14,4 @@ It Provides these plugins
 | Embed        | pasted patterns handling and inserts iframe with embedded content |
 | Image        | image block                                                       |
 | List         | Multi-leveled lists                                               |
+| Table        | Table constructor tool                                            |
