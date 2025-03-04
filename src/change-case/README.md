@@ -2,6 +2,8 @@
 
 Change Case Tool for the [SSE Editor](https://github.com/sse-editor/editor)
 
+![](/assets/change-case.gif)
+
 ## Installation
 
 ### Install via NPM
