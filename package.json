@@ -1,6 +1,6 @@
 {
   "name": "@sse-editor/plugins",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "All the plugins for SSE Editor",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
