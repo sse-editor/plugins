@@ -2,7 +2,7 @@ import {
   IconLowerRoman,
   IconNumber,
   IconUpperRoman,
-  IconLowerAplha as IconLowerAlpha,
+  IconLowerAlpha,
   IconUpperAlpha,
 } from "@sse-editor/icons";
 import type {

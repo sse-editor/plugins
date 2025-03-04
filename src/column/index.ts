@@ -1,0 +1,1 @@
+// https://github.com/calumk/editorjs-columns/blob/main/src/editorjs-columns.js

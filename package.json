@@ -1,6 +1,6 @@
 {
   "name": "@sse-editor/plugins",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "description": "All the plugins for SSE Editor",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
@@ -18,10 +18,12 @@
     "warning",
     "embed",
     "color-picker",
-    "table"
+    "table",
+    "change-case",
+    "column"
   ],
   "scripts": {
-    "clean": "rimraf dist types header paragraph quote delimiter warning code list image embed color-picker table",
+    "clean": "rimraf dist types header paragraph quote delimiter warning code list image embed color-picker table change-case column",
     "build": "npm-run-all build:*",
     "build:files": "node ./scripts/subpath-workaround.mjs",
     "build:tsc": "tsc",
@@ -35,6 +37,8 @@
     "build:list": "vite build --config ./scripts/vite.list.config.js",
     "build:color": "vite build --config ./scripts/vite.color.config.js",
     "build:table": "vite build --config ./scripts/vite.table.config.js",
+    "build:column": "vite build --config ./scripts/vite.column.config.js",
+    "build:changeCase": "vite build --config ./scripts/vite.changeCase.config.js",
     "build:image": "vite build --config ./scripts/vite.image.config.js"
   },
   "repository": {
@@ -48,7 +52,7 @@
     "@sse-editor/caret": "^1.0.1",
     "@sse-editor/dom": "^1.0.0",
     "@sse-editor/editor.js": "^1.0.0-alpha-1",
-    "@sse-editor/icons": "^1.1.0",
+    "@sse-editor/icons": "^1.1.2",
     "@sse-editor/types": "^1.1.0",
     "@types/react": "^19.0.10",
     "vite": "^6.1.1",
