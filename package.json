@@ -2,9 +2,6 @@
   "name": "@sse-editor/plugins",
   "version": "2.0.0",
   "description": "All the plugins for SSE Editor",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.mjs",
-  "types": "./types/index.d.ts",
   "files": [
     "dist",
     "types",
@@ -20,12 +17,14 @@
     "color-picker",
     "table",
     "change-case",
-    "column"
+    "column",
+    "inline/code",
+    "inline/hyperlink"
   ],
   "scripts": {
     "clean": "rimraf dist types header paragraph quote delimiter warning code list image embed color-picker table change-case column",
     "build": "npm-run-all build:*",
-    "build:files": "node ./scripts/subpath-workaround.mjs",
+    "build1:files": "node ./scripts/subpath-workaround.mjs",
     "build:tsc": "tsc",
     "build:header": "vite build --config ./scripts/vite.header.config.js",
     "build:embed": "vite build --config ./scripts/vite.embed.config.js",
@@ -39,7 +38,9 @@
     "build:table": "vite build --config ./scripts/vite.table.config.js",
     "build:column": "vite build --config ./scripts/vite.column.config.js",
     "build:changeCase": "vite build --config ./scripts/vite.changeCase.config.js",
-    "build:image": "vite build --config ./scripts/vite.image.config.js"
+    "build:image": "vite build --config ./scripts/vite.image.config.js",
+    "build:inline": "npm-run-all build:inline:*",
+    "build:inline:code": "vite build --config ./scripts/inline/vite.code.inline.js"
   },
   "repository": {
     "type": "git",
@@ -52,7 +53,7 @@
     "@sse-editor/caret": "^1.0.1",
     "@sse-editor/dom": "^1.0.0",
     "@sse-editor/editor.js": "^1.0.0-alpha-1",
-    "@sse-editor/icons": "^1.1.2",
+    "@sse-editor/icons": "^1.1.3",
     "@sse-editor/types": "^1.1.0",
     "@types/react": "^19.0.10",
     "vite": "^6.1.1",

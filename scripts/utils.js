@@ -24,4 +24,9 @@ export const entryPoints = {
   table: { name: "Table", fileName: "table", entry: "table/index.ts" },
   changeCase: { name: "Change Case", fileName: "change-case", entry: "change-case/index.ts" },
   column: { name: "Column", fileName: "column", entry: "column/index.ts" },
+  inline: {
+    code: { name: "Code", fileName: "code", entry: "code/index.ts" },
+    hyperlink: { name: "Hyperlink", fileName: "hyperlink", entry: "hyperlink/index.ts" },
+    marker: { name: "Marker", fileName: "marker", entry: "marker/index.ts" },
+  }
 };
