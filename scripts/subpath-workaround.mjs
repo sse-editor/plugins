@@ -18,7 +18,13 @@ const pkgJsonPlaceholder = (name) => ({
 const pkgJsonBarrelPlaceholder = (name) => ({
   main: `../dist/${name}/${name}.umd.js`,
   module: `../dist/${name}/${name}.mjs`,
-  types: `../types/${name}/index.d.ts`
+  types: `../types/${name}/index.d.ts`,
+});
+
+const pkgJsonInlinePlaceholder = (name) => ({
+  main: `../dist/inline/${name}/${name}.umd.js`,
+  module: `../dist/inline/${name}/${name}.mjs`,
+  types: `../types/inline/${name}/index.d.ts`,
 });
 
 async function run() {
@@ -37,14 +43,17 @@ async function run() {
     ...subpathHelperFile.ignoredFolders,
     "dist",
     "types",
+    "inline"
   ];
-
-  //   console.log(allFilesNames);
 
   if (pkgFile.files.length !== allFilesNames.length) {
     throw new Error(
       'The package.json "files" array length does not match the subpaths.js'
     );
+  }
+
+  if (!fs.existsSync(`${process.cwd()}/inline`)) {
+    fs.mkdirSync(`${process.cwd()}/inline`);
   }
 
   const hasAllSubpathsInFiles = pkgFile.files.every((name) =>
@@ -65,7 +74,7 @@ async function run() {
     writeJSON(`../${name}/package.json`, pkgJsonPlaceholder(name)); // Adjusted path
   });
 
-  subpathHelperFile.subpathFoldersBarrel.forEach(name => {
+  subpathHelperFile.subpathFoldersBarrel.forEach((name) => {
     const dir = new URL(`../${name}`, import.meta.url); // Adjusted path
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
@@ -73,8 +82,17 @@ async function run() {
     writeJSON(`../${name}/package.json`, pkgJsonBarrelPlaceholder(name)); // Adjusted path
   });
 
-  console.log('Successfully created subpath directories with placeholder files');
-}
+  subpathHelperFile.subpathFolderInline.forEach((name) => {
+    const dir = new URL(`../inline/${name}`, import.meta.url);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+    writeJSON(`../inline/${name}/package.json`, pkgJsonInlinePlaceholder(name));
+  });
 
+  console.log(
+    "Successfully created subpath directories with placeholder files"
+  );
+}
 
 run();

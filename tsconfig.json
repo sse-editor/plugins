@@ -12,7 +12,7 @@
     "declaration": true,
     "isolatedModules": true,
     "outDir": "./types",
-    "types": ["react"]
+    "types": ["react", "node"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "src/aiText"]

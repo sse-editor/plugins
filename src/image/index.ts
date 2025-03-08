@@ -259,9 +259,7 @@ export default class ImageTool implements BlockTool {
    */
   public save(): ImageToolData {
     const caption = this.ui.nodes.caption;
-
     this._data.caption = caption.innerHTML;
-
     return this.data;
   }
 
@@ -435,7 +433,6 @@ export default class ImageTool implements BlockTool {
    */
   private set data(data: ImageToolData) {
     this.image = data.file;
-
     this._data.caption = data.caption || "";
     this.ui.fillCaption(this._data.caption);
 
@@ -467,7 +464,6 @@ export default class ImageTool implements BlockTool {
    */
   private set image(file: ImageSetterParam | undefined) {
     this._data.file = file || { url: "" };
-
     if (file && file.url) {
       this.ui.fillImage(file.url);
     }

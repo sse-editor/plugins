@@ -18,13 +18,12 @@
     "table",
     "change-case",
     "column",
-    "inline/code",
-    "inline/hyperlink"
+    "inline"
   ],
   "scripts": {
-    "clean": "rimraf dist types header paragraph quote delimiter warning code list image embed color-picker table change-case column",
+    "clean": "rimraf dist types header paragraph quote delimiter warning code list image embed color-picker table change-case column inline",
     "build": "npm-run-all build:*",
-    "build1:files": "node ./scripts/subpath-workaround.mjs",
+    "build:files": "node ./scripts/subpath-workaround.mjs",
     "build:tsc": "tsc",
     "build:header": "vite build --config ./scripts/vite.header.config.js",
     "build:embed": "vite build --config ./scripts/vite.embed.config.js",
@@ -40,7 +39,10 @@
     "build:changeCase": "vite build --config ./scripts/vite.changeCase.config.js",
     "build:image": "vite build --config ./scripts/vite.image.config.js",
     "build:inline": "npm-run-all build:inline:*",
-    "build:inline:code": "vite build --config ./scripts/inline/vite.code.inline.js"
+    "build:inline:code": "vite build --config ./scripts/inline/vite.code.inline.js",
+    "build:inline:hyperlink": "vite build --config ./scripts/inline/vite.hyperlink.inline.js",
+    "build:inline:marker": "vite build --config ./scripts/inline/vite.marker.inline.js",
+    "build:inline:annotation": "vite build --config ./scripts/inline/vite.annotation.inline.js"
   },
   "repository": {
     "type": "git",
@@ -55,7 +57,10 @@
     "@sse-editor/editor.js": "^1.0.0-alpha-1",
     "@sse-editor/icons": "^1.1.3",
     "@sse-editor/types": "^1.1.0",
+    "@types/node": "^22.13.9",
     "@types/react": "^19.0.10",
+    "nanoid": "^5.1.3",
+    "sweetalert2": "^11.17.2",
     "vite": "^6.1.1",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.0"

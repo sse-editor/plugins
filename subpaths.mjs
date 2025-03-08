@@ -8,5 +8,6 @@ import packageJson from './package.json' with { type: 'json' };
  */
 
 export const subpathNames = []
-export const subpathFoldersBarrel = packageJson.files.filter(k => k !== "dist" && k !== "types")
+export const subpathFoldersBarrel = packageJson.files.filter(k => k !== "dist" && k !== "types" && k !== "inline")
+export const subpathFolderInline = ["annotation", "code", "hyperlink", "marker"]
 export const ignoredFolders = [];

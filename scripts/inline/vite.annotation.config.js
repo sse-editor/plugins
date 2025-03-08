@@ -9,12 +9,19 @@ const VERSION = pkg.version;
 
 export default {
   build: {
-    outDir: `${process.cwd()}/dist/inline/${entryPoints.inline.code.fileName}`,
+    outDir: `${process.cwd()}/dist/inline/${
+      entryPoints.inline.annotation.fileName
+    }`,
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(process.cwd(), "src", "inlineTools",entryPoints.inline.code.entry),
-      name: entryPoints.inline.code.name,
-      fileName: entryPoints.inline.code.fileName,
+      entry: path.resolve(
+        process.cwd(),
+        "src",
+        "inlineTools",
+        entryPoints.inline.annotation.entry
+      ),
+      name: entryPoints.inline.annotation.name,
+      fileName: entryPoints.inline.annotation.fileName,
     },
   },
   define: {
@@ -48,9 +55,9 @@ export default {
     // dts({
     //   tsconfigPath: "./tsconfig.json",
     //   compilerOptions: {
-    //     outDir: `./dist/${entryPoints.inline.code.fileName}`,
+    //     outDir: `./dist/${entryPoints.inline.annotation.fileName}`,
     //   },
-    //   include: [`src/${entryPoints.inline.code.entry}`],
+    //   include: [`src/${entryPoints.inline.annotation.entry}`],
     //   exclude: ["node_modules"],
     // }),
   ],

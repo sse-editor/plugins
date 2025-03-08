@@ -28,5 +28,6 @@ export const entryPoints = {
     code: { name: "Code", fileName: "code", entry: "code/index.ts" },
     hyperlink: { name: "Hyperlink", fileName: "hyperlink", entry: "hyperlink/index.ts" },
     marker: { name: "Marker", fileName: "marker", entry: "marker/index.ts" },
+    annotation: { name: "Annotation", fileName: "annotation", entry: "annotation/index.ts" },
   }
 };
