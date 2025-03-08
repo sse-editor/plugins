@@ -15,3 +15,5 @@ It Provides these plugins
 | Image        | image block                                                       |
 | List         | Multi-leveled lists                                               |
 | Table        | Table constructor tool                                            |
+| Change Case  | Change Case For SSE Editor                                        |
+| Columns      | Columns For SSE Editor                                            |
