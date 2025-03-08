@@ -12,7 +12,7 @@ export default {
     outDir: `${process.cwd()}/dist/inline/${entryPoints.inline.code.fileName}`,
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(process.cwd(), "src", "inlineTools",entryPoints.inline.code.entry),
+      entry: path.resolve(process.cwd(), "src", "inline",entryPoints.inline.code.entry),
       name: entryPoints.inline.code.name,
       fileName: entryPoints.inline.code.fileName,
     },

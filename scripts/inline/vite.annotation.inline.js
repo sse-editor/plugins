@@ -17,7 +17,7 @@ export default {
       entry: path.resolve(
         process.cwd(),
         "src",
-        "inlineTools",
+        "inline",
         entryPoints.inline.annotation.entry
       ),
       name: entryPoints.inline.annotation.name,
